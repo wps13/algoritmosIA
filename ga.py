@@ -2,7 +2,7 @@ import numpy
 from random import randint
 
 '''
-Grupo: Ana Luisa, Estela, Kallil, Willane
+Algoritmo genético
 
 O problema proposto foi movimentar animais, mais especificamente formigas, dentro de um espaço
 delimitado. No qual o movimento seria gerado aleatoriamente, tendo como intervalo inicial um 
@@ -11,7 +11,7 @@ valor menor, de forma a limitar o espaço e aumentando gradativamente. O algorit
 
 class movAnimal():
     '''
-     manipultaMat
+     main:
         Função responsável por inicializar e preencher as matrizes da população(pop)
         Calcula-se a distância e fit de cada elemento.
         A matriz da população tem como parametros as posições x,y e fit de cada elemento(linha)
@@ -49,7 +49,7 @@ class movAnimal():
                     for i in range(elems)
                         if(probabilidade>aux[i-1] && probabilidade<=aux[i])
                         novaPop[ind] = aux[i]
-                    ind++
+                        ind++
 
     #modificação do gene
     def mutacao(posX,posY):
