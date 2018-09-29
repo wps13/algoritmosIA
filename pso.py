@@ -1,7 +1,11 @@
 import numpy
 from random import randint
 
-class pso:#tam é o tamanho da enxame
+class pso:
+    '''
+    tam é o tamanho da enxame
+    velMax é a velocidade máxima das partículas
+    '''
     def __init__(self,tam, velMax):
         self.tam = tam
         self.velMax = velMax
