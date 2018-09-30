@@ -1,6 +1,10 @@
 import numpy
 from random import randint
 
+'''
+Particle Swarm Optimization - Otimização por enxame de Partículas
+'''
+
 class pso:
     '''
     tam é o tamanho da enxame
