@@ -27,6 +27,7 @@ class simulatedAnnealing:
     #realiza uma perturbação na solução s
     def perturba():
     
+    #necessário definir
     def funcaoObjetivo():
 
     def gerarAleatorio():
