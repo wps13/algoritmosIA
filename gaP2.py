@@ -92,20 +92,31 @@ def crossingOver():
 	for i in range(2):
 		pop[iPop] = filhos[i]
 		iPop+=1
-
+def aptidao():
+	nulos=0
+	for i in range(5):
+		for j in range(5):
+			if pop[i][j] == 0:
+				nulos+=1
+	if nulos == 4:
+		return True
+	else:
+		return False
 def mutacao():
 
 	#Modifica o gene com maior peso, tornando-o um
 	#caminho não acessavel,por defini-lo como peso 0.
 	#Escolhe os cromossomos com maior fit.
 	maiorPeso=0
-	for i in range(5):
-		maiorPeso = max(pop[i])
-		for j in range(5):
-			if pop[i][j] == maiorPeso:
-				pop[i][j] = 0
-
-while(geracoes < n)
+	aptCromossomo = aptidao()
+	if aptCromossomo == False:
+		for i in range(5):
+			maiorPeso = max(pop[i])
+				for j in range(5):
+					if pop[i][j] == maiorPeso:
+						pop[i][j] = 0
+estado = aptidao()
+while(!estado):
 	selecao()
 	crossingOver()
 	mutacao()
