@@ -16,7 +16,7 @@ pop = [
 
 #array para armazenar os fits de cada cromossomo
 fits=numpy.zeros(5)
-
+pesos= numpy.zeros(5)
 def fit():
 	'''
 	Função que calcula os fits dos cromossomos
@@ -24,8 +24,8 @@ def fit():
 	soma-se os pesos dos genes e calcula o inverso
 	Visto que procura-se o menor caminho possível
 	'''
-	sumFits=numpy.sum(pop,axis=1)
-	sumFits = 1/sumFits
+	pesos=numpy.sum(pop,axis=1)
+	sumFits = 1/pesos
 	return sumFits
 
 fits=fit()
@@ -54,7 +54,8 @@ def selecao():
 		#Gera-se um valor para procurar na roleta
 		probab =uniform(intInferior,intSuperior)
 		#Procura-se o elemento entre os intervalos
-		#Tendo-se sido somado os fits do elemento atual com os anteriores para assim obter-se as faixas correspondentes
+		#Tendo-se sido somado os fits do elemento atual
+		# com os anteriores para assim obter-se as faixas correspondentes
 		for i in range(4):
 		#Caso o elemento esteja na faixa, armazena-se o indice
 		# correspondente ao cromossomo
@@ -76,12 +77,19 @@ selecao()
 def crossingOver():
 	#Matriz para armazenar os filhos
 	filhos = numpy.zeros((2,5))
+	iPop = 3
+	#Os filhos são gerados com a mistura dos genes dos pais
 	for i in range(3):
 		for i in range(5):				
-			filhos
-#def mutacao():
-'''
-Modifica o gene com maior peso, tornando-o um
-caminho não acessavel,por defini-lo como peso 0.
-Escolhe os cromossomos com maior fit.
-'''
+			filhos[i][j] = pop[i][j] + pop[j][i]
+	#Armazena os filhos nas posições restantes da população,compostas por zeros
+	for i in range(2):
+		pop[iPop] = filhos[i]
+		iPop+=1
+
+def mutacao():
+
+	#Modifica o gene com maior peso, tornando-o um
+	#caminho não acessavel,por defini-lo como peso 0.
+	#Escolhe os cromossomos com maior fit.
+	
