@@ -2,7 +2,7 @@ import numpy
 from random import uniform
 
 
-#Questão 3 - Prova 2
+#Questão 2 - Prova 2
 
 #Implementar algoritmo genético responsável por achar melhor caminho
 
@@ -14,9 +14,14 @@ pop = [
 	[3,3,7,0,3],
 	[6,8,3,3,0]]
 
+#Variavel para controlar a quantidade de geracoes
+geracoes=0
+#quantidade de gerações desejadas; Variavél
+n=50
 #array para armazenar os fits de cada cromossomo
 fits=numpy.zeros(5)
 pesos= numpy.zeros(5)
+
 def fit():
 
 	#Função que calcula os fits dos cromossomos
@@ -72,7 +77,6 @@ def selecao():
 	for i in range(5):
 		pop[i]=novaPop[i]
 
-selecao()	
 
 def crossingOver():
 	#Matriz para armazenar os filhos
@@ -94,4 +98,15 @@ def mutacao():
 	#Modifica o gene com maior peso, tornando-o um
 	#caminho não acessavel,por defini-lo como peso 0.
 	#Escolhe os cromossomos com maior fit.
-	
+	maiorPeso=0
+	for i in range(5):
+		maiorPeso = max(pop[i])
+		for j in range(5):
+			if pop[i][j] == maiorPeso:
+				pop[i][j] = 0
+
+while(geracoes < n)
+	selecao()
+	crossingOver()
+	mutacao()
+	geracoes+=1	
