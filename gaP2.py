@@ -1,11 +1,11 @@
 import numpy
 from random import uniform
 
-'''
-Questão 3 - Prova 2
 
-Implementar algoritmo genético responsável por achar melhor caminho
-'''
+#Questão 3 - Prova 2
+
+#Implementar algoritmo genético responsável por achar melhor caminho
+
 #cria população inicial
 pop = [
 	[0,2,9,3,6],
@@ -18,12 +18,12 @@ pop = [
 fits=numpy.zeros(5)
 pesos= numpy.zeros(5)
 def fit():
-	'''
-	Função que calcula os fits dos cromossomos
-	Quanto maior o valor, melhor é o cromossomo
-	soma-se os pesos dos genes e calcula o inverso
-	Visto que procura-se o menor caminho possível
-	'''
+
+	#Função que calcula os fits dos cromossomos
+	#Quanto maior o valor, melhor é o cromossomo
+	#soma-se os pesos dos genes e calcula o inverso
+	#Visto que procura-se o menor caminho possível
+
 	pesos=numpy.sum(pop,axis=1)
 	sumFits = 1/pesos
 	return sumFits
