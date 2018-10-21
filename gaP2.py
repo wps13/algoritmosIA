@@ -79,9 +79,11 @@ def crossingOver():
 	filhos = numpy.zeros((2,5))
 	iPop = 3
 	#Os filhos são gerados com a mistura dos genes dos pais
+	#Somando os genes de um cromossomo com o seguinte
+	#Em posições correspondentes
 	for i in range(3):
-		for i in range(5):				
-			filhos[i][j] = pop[i][j] + pop[j][i]
+		for j in range(5):				
+			filhos[i][j] = pop[i][j] + pop[i+1][j]
 	#Armazena os filhos nas posições restantes da população,compostas por zeros
 	for i in range(2):
 		pop[iPop] = filhos[i]
